@@ -1,6 +1,7 @@
 import "babel-polyfill";
 import "logger";
 import Logger from "js-logger";
+import dymo from "lib/dymo";
 import { MESSAGE } from "constants";
 import { messageHandler } from "end/handlers";
 
@@ -14,7 +15,7 @@ function init() {
 
 function initShim() {
   // Initialize dymo.label.framework.
-  window.dymo.label.framework.init(init);
+  dymo.label.framework.init(init);
 }
 
 window.onload = initShim;
