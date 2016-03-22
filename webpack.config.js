@@ -1,9 +1,8 @@
-var webpack = require("webpack");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
-var CleanWebpackPlugin = require("clean-webpack-plugin");
-var CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-var buildDir = "rio-rtw-labels.safariextension";
+const buildDir = "rio-rtw-labels.safariextension";
 
 module.exports = {
   debug: true,
@@ -22,13 +21,13 @@ module.exports = {
 
   resolve: {
     modulesDirectories: ["node_modules", "./src"],
-    extensions: ["", ".js", ".json"]
+    extensions: ["", ".js"]
   },
 
   module: {
     loaders: [
       {
-        test: /dymo/,
+        test: /dymo\.js$/,
         loader: "legacy",
         query: {
           export: "dymo"
@@ -37,15 +36,10 @@ module.exports = {
       {
         test: /\.js?$/,
         loader: "babel",
-        exclude: [/node_modules/, /dymo/],
+        exclude: [/node_modules/, /dymo\.js$/],
         query: {
           presets: ["es2015", "stage-0"]
         }
-      },
-      {
-        test: /\.json$/,
-        loader: "json",
-        exclude: [/node_modules/]
       }
     ]
   },
@@ -55,7 +49,6 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: "src/Info.plist" },
       { from: "src/Settings.plist" },
-      { from: "src/assets", to: "assets" }
     ]),
     new HtmlWebpackPlugin({
       title: "Rio RTW Labels",

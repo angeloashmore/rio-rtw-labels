@@ -26,12 +26,12 @@
     "babel-preset-stage-0": "^6.5.0",
     "clean-webpack-plugin": "^0.1.8",
     "copy-webpack-plugin": "^1.1.1",
+    "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.12.0",
     "hyperscript": "^1.4.7",
-    "i18next": "^2.3.5",
     "js-logger": "^1.2.0",
-    "json-loader": "^0.5.4",
     "legacy-loader": "angeloashmore/legacy-loader",
+    "url-loader": "^0.5.7",
     "webpack": "^1.12.14"
   }
 }

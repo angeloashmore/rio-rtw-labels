@@ -1,8 +1,9 @@
 import Logger from "js-logger";
-import { ASSETS } from "constants";
+import { ATTRIBUTES, QUERIES } from "constants";
+import labelXML from "assets/label.label";
 
 export default function printAssets() {
-  const assets = retrieveSelectedAssets();
+  const assets = selectedAssets();
 
   if (assets.length < 1) {
     Logger.warn("No assets selected to print");
@@ -12,12 +13,12 @@ export default function printAssets() {
   Logger.info("Sending to printer", assets)
 }
 
-function retrieveSelectedAssets() {
+function selectedAssets() {
   var assets = [];
 
-  const elements = document.querySelectorAll(ASSETS.QUERY);
+  const elements = document.querySelectorAll(QUERIES.ASSETS_SELECTED);
 
-  for (var element of elements) {
+  for (let element of elements) {
     const asset = elementToAsset(element);
     assets.push(asset);
   }
@@ -28,8 +29,8 @@ function retrieveSelectedAssets() {
 function elementToAsset(element) {
   var asset = {};
 
-  for (var key in ASSETS.ATTRIBUTES) {
-    const klass = ASSETS.ATTRIBUTES[key];
+  for (let key in ATTRIBUTES) {
+    const klass = ATTRIBUTES[key];
     const value = element.querySelector(`.${klass}`).innerText;
     asset[key] = value;
   }

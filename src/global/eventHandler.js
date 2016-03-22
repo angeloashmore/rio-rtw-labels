@@ -3,7 +3,7 @@ import { CHANGE, COMMAND } from "constants";
 
 export default function eventHandler(type) {
   return event => {
-    var name;
+    let name;
 
     switch (type) {
       case CHANGE:

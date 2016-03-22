@@ -1,13 +1,31 @@
+import Logger from "js-logger";
 import h from "hyperscript";
 import { QUERIES } from "constants";
+import { printAssets } from "end/actions";
 
 export default function injectPrintButton() {
-  const table = document.querySelector(QUERIES.REPORTS_TABLE);
+  const parent = document.querySelector(QUERIES.PRINT_ROW_PARENT);
 
-  const child =
-    h("li.table-row",
-      h("label", "Print RTW Labels"),
-      h("button#print-rtw-label.download"));
-
-  table.appendChild(child);
+  Logger.info("Injecting print button");
+  parent.appendChild(button());
 }
+
+function button() {
+  // Used to pluralize button label.
+  const selected = document.querySelectorAll(QUERIES.ASSETS_SELECTED);
+
+  return (
+    h(`li.table-row${QUERIES.PRINT_ROW}`,
+      h("label", "Print RTW Labels"),
+      h(`button.download${QUERIES.PRINT_BUTTON}`, { style, onclick }))
+  );
+}
+
+function onclick(event) {
+  event.preventDefault();
+  printAssets();
+}
+
+const style = {
+  "background-image": `url(${require("url!assets/print.svg")})`
+};

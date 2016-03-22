@@ -1,8 +1,6 @@
 import Logger from "js-logger";
+import { NAMESPACE } from "constants";
 
 Logger.useDefaults({
-  formatter: (messages, context) => {
-    messages.unshift("[Rio RTW Labels]");
-    if (context.name) messages.unshift(`[${context.name}]`);
-  }
+  formatter: messages => messages.unshift(`[${NAMESPACE}]`)
 });
