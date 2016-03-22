@@ -2,7 +2,7 @@ import Logger from "js-logger";
 import { ATTRIBUTES, MESSAGES, QUERIES } from "constants";
 import { dispatchMessage } from "end/actions";
 
-export default function printAssets() {
+export default function dispatchPrint() {
   const assets = selectedAssets();
 
   if (assets.length < 1) {
@@ -15,16 +15,9 @@ export default function printAssets() {
 }
 
 function selectedAssets() {
-  var assets = [];
-
   const elements = document.querySelectorAll(QUERIES.ASSETS_SELECTED);
-
-  for (let element of elements) {
-    const asset = elementToAsset(element);
-    assets.push(asset);
-  }
-
-  return assets;
+  let assets = [...elements];
+  return assets.map(elementToAsset);
 }
 
 function elementToAsset(element) {

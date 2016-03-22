@@ -1,7 +1,7 @@
 import Logger from "js-logger";
 import h from "hyperscript";
 import { QUERIES } from "constants";
-import { printAssets } from "end/actions";
+import { dispatchPrint } from "end/actions";
 
 export default function injectPrintButton() {
   const parent = document.querySelector(QUERIES.PRINT_ROW_PARENT);
@@ -25,7 +25,7 @@ function button() {
 
 function onclick(event) {
   event.preventDefault();
-  printAssets();
+  dispatchPrint();
 }
 
 const style = {

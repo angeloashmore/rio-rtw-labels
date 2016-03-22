@@ -1,4 +1,3 @@
-import "babel-polyfill";
 import "logger";
 import Logger from "js-logger";
 import { MESSAGE, OBSERVATIONS, QUERIES } from "constants";
