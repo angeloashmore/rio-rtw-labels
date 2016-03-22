@@ -22,7 +22,7 @@ module.exports = {
 
   resolve: {
     modulesDirectories: ["node_modules", "./src"],
-    extensions: ["", ".js"]
+    extensions: ["", ".js", ".json"]
   },
 
   module: {
@@ -41,6 +41,11 @@ module.exports = {
         query: {
           presets: ["es2015", "stage-0"]
         }
+      },
+      {
+        test: /\.json$/,
+        loader: "json",
+        exclude: [/node_modules/]
       }
     ]
   },
@@ -56,11 +61,6 @@ module.exports = {
       title: "Rio RTW Labels",
       filename: "global.html",
       chunks: ["global"]
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
     })
   ]
 };

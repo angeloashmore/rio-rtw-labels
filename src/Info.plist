@@ -20,26 +20,7 @@
 	<dict>
 		<key>Global Page</key>
     <string>global.html</string>
-		<key>Toolbar Items</key>
-		<array>
-			<dict>
-				<key>Command</key>
-        <string>printAssets</string>
-				<key>Identifier</key>
-        <string>printAssets</string>
-				<key>Image</key>
-        <string>assets/Icon-64.png</string>
-				<key>Include By Default</key>
-				<true/>
-				<key>Label</key>
-				<string>Print Rio RTW Labels</string>
-				<key>Palette Label</key>
-				<string>Print Rio RTW Labels</string>
-				<key>Tool Tip</key>
-        <string>Print RTW labels within Rio</string>
-			</dict>
-		</array>
-	</dict>
+  </dict>
 	<key>Content</key>
 	<dict>
 		<key>Scripts</key>

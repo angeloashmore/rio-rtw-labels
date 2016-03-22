@@ -27,8 +27,11 @@
     "clean-webpack-plugin": "^0.1.8",
     "copy-webpack-plugin": "^1.1.1",
     "html-webpack-plugin": "^2.12.0",
+    "hyperscript": "^1.4.7",
+    "i18next": "^2.3.5",
     "js-logger": "^1.2.0",
-    "legacy-loader": "file:../legacy-loader",
+    "json-loader": "^0.5.4",
+    "legacy-loader": "angeloashmore/legacy-loader",
     "webpack": "^1.12.14"
   }
 }

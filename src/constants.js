@@ -27,3 +27,7 @@ export const ASSETS = {
   },
   QUERY: ".search-details-item.selected"
 };
+
+export const QUERIES = {
+  REPORTS_TABLE: "#reports > .table"
+};
