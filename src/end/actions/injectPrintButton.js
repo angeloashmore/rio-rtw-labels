@@ -6,8 +6,10 @@ import { printAssets } from "end/actions";
 export default function injectPrintButton() {
   const parent = document.querySelector(QUERIES.PRINT_ROW_PARENT);
 
-  Logger.info("Injecting print button");
-  parent.appendChild(button());
+  if (parent) {
+    Logger.info("Injecting print button");
+    parent.appendChild(button());
+  }
 }
 
 function button() {

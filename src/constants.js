@@ -11,17 +11,10 @@ export const ATTRIBUTES = {
   position: "position"
 };
 
-export const CHANGE = "change";
-export const CHANGES = {
-  PRINTER: "printer"
-};
-
-export const COMMAND = "command";
-export const COMMANDS = {
-  PRINT_ASSETS: "printAssets"
-};
-
 export const MESSAGE = "message";
+export const MESSAGES = {
+  PRINT: "print"
+};
 
 export const OBSERVATIONS = {
   ASSETS: "assets"

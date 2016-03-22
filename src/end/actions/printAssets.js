@@ -1,6 +1,6 @@
 import Logger from "js-logger";
-import { ATTRIBUTES, QUERIES } from "constants";
-import labelXML from "assets/label.label";
+import { ATTRIBUTES, MESSAGES, QUERIES } from "constants";
+import { dispatchMessage } from "end/actions";
 
 export default function printAssets() {
   const assets = selectedAssets();
@@ -10,7 +10,8 @@ export default function printAssets() {
     return;
   }
 
-  Logger.info("Sending to printer", assets)
+  // Dispatch message to global to handle printing.
+  dispatchMessage(MESSAGES.PRINT, assets);
 }
 
 function selectedAssets() {
