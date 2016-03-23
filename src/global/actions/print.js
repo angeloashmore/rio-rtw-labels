@@ -1,9 +1,9 @@
-import Logger from "js-logger";
-import dymo from "lib/dymo";
-import { ATTRIBUTES, BARCODE_VENDOR_PREFIX, MESSAGES } from "constants";
-import { dispatchMessage, getPrinter } from "global/actions";
+import Logger from 'js-logger';
+import dymo from 'lib/dymo';
+import { ATTRIBUTES, BARCODE_VENDOR_PREFIX, MESSAGES } from 'constants';
+import { dispatchMessage, getPrinter } from 'global/actions';
 
-const rawLabel = require("raw!assets/label.label");
+const rawLabel = require('raw!assets/label.label');
 const label = dymo.label.framework.openLabelXml(rawLabel);
 
 export default function print(assets) {
@@ -11,11 +11,11 @@ export default function print(assets) {
   assets.forEach(asset => {
     const label = labelSet.addRecord();
     configureLabel(label, asset);
-  })
+  });
 
   try {
     const printer = getPrinter();
-    Logger.info("Printing assets", assets);
+    Logger.info('Printing assets', assets);
     label.print(printer, null, labelSet);
   } catch (e) {
     Logger.error(e.message);

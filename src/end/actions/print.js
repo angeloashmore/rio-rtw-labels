@@ -1,12 +1,12 @@
-import Logger from "js-logger";
-import { ATTRIBUTES, MESSAGES, QUERIES } from "constants";
-import { dispatchMessage } from "end/actions";
+import Logger from 'js-logger';
+import { ATTRIBUTES, MESSAGES, QUERIES } from 'constants';
+import { dispatchMessage } from 'end/actions';
 
 export default function print() {
   const assets = selectedAssets();
 
   if (assets.length < 1) {
-    Logger.warn("No assets selected to print");
+    Logger.warn('No assets selected to print');
     return;
   }
 

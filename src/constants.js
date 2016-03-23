@@ -1,50 +1,50 @@
-export const NAMESPACE = "rio-rtw-labels";
+export const NAMESPACE = 'rio-rtw-labels';
 
 export const ATTRIBUTES = {
-  BUCKET: "bucket",
+  BUCKET: 'bucket',
   CLASSES: {
-    description: "description",
-    partNumber: "part_number",
-    serialNumber: "serial",
-    bucket: "bucket",
-    location: "location",
-    group: "group",
-    category: "category",
-    position: "position"
+    description: 'description',
+    partNumber: 'part_number',
+    serialNumber: 'serial',
+    bucket: 'bucket',
+    location: 'location',
+    group: 'group',
+    category: 'category',
+    position: 'position'
   },
-  SERIAL_NUMBER_TEXT: "serialNumberText"
+  SERIAL_NUMBER_TEXT: 'serialNumberText'
 };
 
-export const BARCODE_VENDOR_PREFIX = "S";
+export const BARCODE_VENDOR_PREFIX = 'S';
 
-export const MESSAGE = "message";
+export const MESSAGE = 'message';
 export const MESSAGES = {
-  ERROR: "error",
-  PRINT: "print"
+  ERROR: 'error',
+  PRINT: 'print'
 };
 
 export const OBSERVATIONS = {
-  ASSETS: "assets"
+  ASSETS: 'assets'
 };
 
 export const QUERIES = {
-  ASSETS: ".search-details-list",
-  ASSETS_SELECTED: ".search-details-item.selected",
-  PRINT_BUTTON: id(ns("print", "button")),
-  PRINT_ROW: id(ns("print", "row")),
-  PRINT_ROW_PARENT: "#reports > .table"
+  ASSETS: '.search-details-list',
+  ASSETS_SELECTED: '.search-details-item.selected',
+  PRINT_BUTTON: id(ns('print', 'button')),
+  PRINT_ROW: id(ns('print', 'row')),
+  PRINT_ROW_PARENT: '#reports > .table'
 };
 
 export const SETTINGS = {
-  OVERRIDE_PRINTER_NAME: "overridePrinterName",
-  USE_DEFAULT_PRINTER: "useDefaultPrinter"
+  OVERRIDE_PRINTER_NAME: 'overridePrinterName',
+  USE_DEFAULT_PRINTER: 'useDefaultPrinter'
 };
 
 function id(value) {
-  return "#" + value;
+  return '#' + value;
 }
 
 function ns(...values) {
-  const separator = "__";
+  const separator = '__';
   return [NAMESPACE, ...values].join(separator);
 }

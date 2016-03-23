@@ -1,7 +1,8 @@
-import Logger from "js-logger";
+import Logger from 'js-logger';
+import Safari from 'safari';
 
 export default function dispatchMessage(...message) {
-  Logger.info("Dispatching message", ...message);
-  safari.application.activeBrowserWindow.activeTab.page.
+  Logger.info('Dispatching message', ...message);
+  Safari.application.activeBrowserWindow.activeTab.page.
     dispatchMessage(...message);
 }
