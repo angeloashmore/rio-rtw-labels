@@ -4,7 +4,7 @@
   <array>
     <dict>
       <key>DefaultValue</key>
-      <string>true</string>
+      <true/>
       <key>Key</key>
       <string>useDefaultPrinter</string>
       <key>Title</key>

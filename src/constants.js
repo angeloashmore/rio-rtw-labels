@@ -1,6 +1,7 @@
 export const NAMESPACE = "rio-rtw-labels";
 
 export const ATTRIBUTES = {
+  BUCKET: "bucket",
   CLASSES: {
     description: "description",
     partNumber: "part_number",
@@ -33,8 +34,8 @@ export const QUERIES = {
 };
 
 export const SETTINGS = {
-  USE_DEFAULT_PRINTER: "useDefaultPrinter",
-  OVERRIDE_PRINTER_NAME: "overridePrinterName"
+  OVERRIDE_PRINTER_NAME: "overridePrinterName",
+  USE_DEFAULT_PRINTER: "useDefaultPrinter"
 };
 
 function id(value) {

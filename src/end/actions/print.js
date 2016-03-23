@@ -2,7 +2,7 @@ import Logger from "js-logger";
 import { ATTRIBUTES, MESSAGES, QUERIES } from "constants";
 import { dispatchMessage } from "end/actions";
 
-export default function dispatchPrint() {
+export default function print() {
   const assets = selectedAssets();
 
   if (assets.length < 1) {
@@ -10,7 +10,6 @@ export default function dispatchPrint() {
     return;
   }
 
-  // Dispatch message to global to handle printing.
   dispatchMessage(MESSAGES.PRINT, assets);
 }
 

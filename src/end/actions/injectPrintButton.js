@@ -1,7 +1,7 @@
 import Logger from "js-logger";
 import h from "hyperscript";
 import { QUERIES } from "constants";
-import { dispatchPrint } from "end/actions";
+import { print } from "end/actions";
 
 export default function injectPrintButton() {
   const parent = document.querySelector(QUERIES.PRINT_ROW_PARENT);
@@ -15,17 +15,23 @@ export default function injectPrintButton() {
 function button() {
   // Used to pluralize button label.
   const selected = document.querySelectorAll(QUERIES.ASSETS_SELECTED);
+  const text = `Print RTW ${pluralize("Label", selected.length)}`;
 
   return (
     h(`li.table-row${QUERIES.PRINT_ROW}`,
-      h("label", "Print RTW Labels"),
+      h("label", text),
       h(`button.download${QUERIES.PRINT_BUTTON}`, { style, onclick }))
   );
 }
 
 function onclick(event) {
   event.preventDefault();
-  dispatchPrint();
+  print();
+}
+
+function pluralize(word, n) {
+  if (n == 1) return word;
+  return word + "s";
 }
 
 const style = {
