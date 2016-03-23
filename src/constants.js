@@ -12,8 +12,10 @@ export const ATTRIBUTES = {
     category: "category",
     position: "position"
   },
-  SERIAL_NUMBER_DISPLAY: "serialNumberDisplay"
+  SERIAL_NUMBER_TEXT: "serialNumberText"
 };
+
+export const BARCODE_VENDOR_PREFIX = "S";
 
 export const MESSAGE = "message";
 export const MESSAGES = {
@@ -23,7 +25,7 @@ export const MESSAGES = {
 
 export const OBSERVATIONS = {
   ASSETS: "assets"
-}
+};
 
 export const QUERIES = {
   ASSETS: ".search-details-list",
