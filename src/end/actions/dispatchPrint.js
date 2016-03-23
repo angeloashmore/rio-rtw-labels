@@ -23,8 +23,8 @@ function selectedAssets() {
 function elementToAsset(element) {
   var asset = {};
 
-  for (let key in ATTRIBUTES) {
-    const klass = ATTRIBUTES[key];
+  for (let key in ATTRIBUTES.CLASSES) {
+    const klass = ATTRIBUTES.CLASSES[key];
     const value = element.querySelector(`.${klass}`).innerText;
     asset[key] = value;
   }

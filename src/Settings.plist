@@ -3,22 +3,22 @@
 <plist version="1.0">
   <array>
     <dict>
+      <key>DefaultValue</key>
+      <string>true</string>
       <key>Key</key>
-      <string>printer</string>
+      <string>useDefaultPrinter</string>
       <key>Title</key>
-      <string>DYMO Label Printer</string>
-      <key>Titles</key>
-      <array>
-        <string>DYMO</string>
-        <string>X544</string>
-      </array>
+      <string>Use default printer</string>
       <key>Type</key>
-      <string>PopUpButton</string>
-      <key>Values</key>
-      <array>
-        <string>DYMO</string>
-        <string>X544</string>
-      </array>
+      <string>CheckBox</string>
+    </dict>
+    <dict>
+      <key>Key</key>
+      <string>overridePrinterName</string>
+      <key>Title</key>
+      <string>Override printer name</string>
+      <key>Type</key>
+      <string>TextField</string>
     </dict>
   </array>
 </plist>

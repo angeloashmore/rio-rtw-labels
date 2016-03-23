@@ -1,6 +1,5 @@
 import Logger from "js-logger";
 import { MESSAGES } from "constants";
-import { print } from "global/actions";
 
 export default function messageHandler(event) {
   const { name, message: payload } = event;
@@ -8,9 +7,9 @@ export default function messageHandler(event) {
   Logger.info("Message received", name, payload);
 
   switch (name) {
-    case MESSAGES.PRINT:
+    case MESSAGES.ERROR:
       Logger.info("Handling message", name);
-      print(payload);
+      Logger.error(payload);
       break;
 
     default:

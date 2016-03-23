@@ -1,18 +1,22 @@
-export const NAMESPACE = "rio-rtw-lables";
+export const NAMESPACE = "rio-rtw-labels";
 
 export const ATTRIBUTES = {
-  description: "description",
-  partNumber: "part_number",
-  serialNumber: "serial",
-  bucket: "bucket",
-  location: "location",
-  group: "group",
-  category: "category",
-  position: "position"
+  CLASSES: {
+    description: "description",
+    partNumber: "part_number",
+    serialNumber: "serial",
+    bucket: "bucket",
+    location: "location",
+    group: "group",
+    category: "category",
+    position: "position"
+  },
+  SERIAL_NUMBER_DISPLAY: "serialNumberDisplay"
 };
 
 export const MESSAGE = "message";
 export const MESSAGES = {
+  ERROR: "error",
   PRINT: "print"
 };
 
@@ -29,7 +33,8 @@ export const QUERIES = {
 };
 
 export const SETTINGS = {
-  PRINTER: "printer"
+  USE_DEFAULT_PRINTER: "useDefaultPrinter",
+  OVERRIDE_PRINTER_NAME: "overridePrinterName"
 };
 
 function id(value) {
