@@ -1,11 +1,12 @@
 import Logger from 'js-logger';
-import mutationHandlerFactory from 'end/mutationHandlerFactory';
+import * as mutationHandlers from 'end/mutationHandlers';
 
 export default function observe(observation, query, config) {
-  const target = document.querySelector(query);
   const observer = new MutationObserver(mutations => {
-    mutations.forEach(mutationHandlerFactory(observer, observation));
+    mutations.forEach(mutationHandlers[observation](observer));
   });
+
+  const target = document.querySelector(query);
 
   observer.observe(target, config);
   Logger.info('Now observing mutations', observation);

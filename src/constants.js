@@ -25,13 +25,13 @@ export const MESSAGES = {
 
 export const OBSERVATIONS = {
   ASSETS: 'assets',
-  MAIN: 'main'
+  ASSETS_PARENT: 'assetsParent'
 };
 
 export const QUERIES = {
   ASSETS: '.search-details-list',
+  ASSETS_PARENT: '.master .body',
   ASSETS_SELECTED: '.search-details-item.selected',
-  MAIN: '#main',
   PRINT_BUTTON: id(ns('print', 'button')),
   PRINT_ROW: id(ns('print', 'row')),
   PRINT_ROW_PARENT: '#reports > .table'
@@ -41,6 +41,8 @@ export const SETTINGS = {
   OVERRIDE_PRINTER_NAME: 'overridePrinterName',
   USE_DEFAULT_PRINTER: 'useDefaultPrinter'
 };
+
+export const UNDEFINED = 'undefined';
 
 function id(value) {
   return '#' + value;
