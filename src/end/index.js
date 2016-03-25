@@ -3,26 +3,18 @@ import Logger from 'js-logger';
 import Safari from 'safari';
 import { MESSAGE, OBSERVATIONS, QUERIES } from 'constants';
 import messageHandler from 'end/messageHandler';
-import mutationHandlerFactory from 'end/mutationHandlerFactory';
+import { observe } from 'end/actions';
 
 function init() {
   // Begin listening for messages.
   Safari.self.addEventListener(MESSAGE, messageHandler, false);
   Logger.info('Now listening for messages');
 
-  // Begin observing mutations on QUERIES.ASSETS.
-  const observation = OBSERVATIONS.ASSETS;
-  const target = document.querySelector(QUERIES.ASSETS);
-  const handler = mutationHandlerFactory(observation);
-  const observer = new MutationObserver(ms => ms.forEach(handler));
-  const config = {
-    attributes: true,
-    attributeFilter: ['class'],
+  // Begin observing mutations on QUERIES.MAIN.
+  observe(OBSERVATIONS.MAIN, QUERIES.MAIN, {
     childList: true,
     subtree: true
-  };
-  observer.observe(target, config);
-  Logger.info('Now observing mutations', observation);
+  });
 }
 
 window.onload = init;

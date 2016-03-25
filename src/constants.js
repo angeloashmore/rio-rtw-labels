@@ -24,12 +24,14 @@ export const MESSAGES = {
 };
 
 export const OBSERVATIONS = {
-  ASSETS: 'assets'
+  ASSETS: 'assets',
+  MAIN: 'main'
 };
 
 export const QUERIES = {
   ASSETS: '.search-details-list',
   ASSETS_SELECTED: '.search-details-item.selected',
+  MAIN: '#main',
   PRINT_BUTTON: id(ns('print', 'button')),
   PRINT_ROW: id(ns('print', 'row')),
   PRINT_ROW_PARENT: '#reports > .table'
