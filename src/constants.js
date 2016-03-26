@@ -1,14 +1,6 @@
 export const NAMESPACE = 'rio-rtw-labels';
 export const NAMESPACE_SEPARATOR = '__';
 
-const id = (value) => {
-  return '#' + value;
-};
-
-const ns = (...values) => {
-  return [NAMESPACE, ...values].join(NAMESPACE_SEPARATOR);
-};
-
 export const ATTRIBUTES = {
   BUCKET: 'bucket',
   CLASSES: {
@@ -41,8 +33,8 @@ export const QUERIES = {
   ASSETS_SELECTED: '#main .detail .master .selected',
   ASSETS_SELECTION_TOOLBAR: '.selection-toolbar',
   MAIN: '#main',
-  PRINT_BUTTON: id(ns('print', 'button')),
-  PRINT_ROW: id(ns('print', 'row')),
+  PRINT_BUTTON: '#' + NAMESPACE + '__print__button',
+  PRINT_ROW: '#' + NAMESPACE + '__print__row',
   PRINT_ROW_PARENT: '#tasks > ul'
 };
 
