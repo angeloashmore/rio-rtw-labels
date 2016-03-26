@@ -9,7 +9,7 @@ const configureRecord = (record, asset) => {
   let key;
 
   for (key in asset) {
-    if (ATTRIBUTES.CLASSES.includes(key)) {
+    if (ATTRIBUTES.CLASSES.hasOwnProperty(key)) {
       record.setText(key, asset[key]);
     }
   }

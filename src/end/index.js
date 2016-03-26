@@ -13,11 +13,14 @@ const init = () => {
   Safari.self.addEventListener(MESSAGE, messageHandler, false);
   Logger.info('Now listening for messages');
 
-  // Begin observing mutations on QUERIES.ASSETS_PARENT.
-  observe(OBSERVATIONS.ASSETS_PARENT, QUERIES.ASSETS_PARENT, {
-    childList: true,
-    subtree: true
-  });
+  // Begin observing mutations on QUERIES.MAIN.
+  observe(
+    OBSERVATIONS.MAIN,
+    QUERIES.MAIN,
+    {
+      childList: true,
+      subtree: true
+    });
 };
 
 window.onload = init;

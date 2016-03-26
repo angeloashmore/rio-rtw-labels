@@ -1,7 +1,7 @@
-import assets from 'end/mutationHandlers/assets';
-import assetsParent from 'end/mutationHandlers/assetsParent';
+import assetsSelectionToolbar from 'end/mutationHandlers/assetsSelectionToolbar';
+import main from 'end/mutationHandlers/main';
 
 export {
-  assets,
-  assetsParent
+  assetsSelectionToolbar,
+  main
 };

@@ -2,14 +2,14 @@ import Logger from 'js-logger';
 import hscript from 'hyperscript';
 import {QUERIES} from 'constants';
 import {print} from 'end/actions';
-import {printIcon} from 'assets/print.svg';
+import iconPrint from 'assets/icon-print.svg';
 
-const button = (() => {
+const button = () => {
   const selected = document.querySelectorAll(QUERIES.ASSETS_SELECTED);
-  const text = 'Print RTW Label' + (selected.length ? 's' : '');
+  const text = 'Print RTW Label' + (selected.length === 1 ? '' : 's');
 
   const style = {
-    'background-image': 'url(' + printIcon + ')'
+    'background-image': 'url(' + iconPrint + ')'
   };
 
   const onclick = (event) => {
@@ -26,7 +26,7 @@ const button = (() => {
           style
         }))
   );
-})();
+};
 
 const injectPrintButton = () => {
   const parent = document.querySelector(QUERIES.PRINT_ROW_PARENT);

@@ -33,17 +33,17 @@ export const MESSAGES = {
 };
 
 export const OBSERVATIONS = {
-  ASSETS: 'assets',
-  ASSETS_PARENT: 'assetsParent'
+  ASSETS_SELECTION_TOOLBAR: 'assetsSelectionToolbar',
+  MAIN: 'main'
 };
 
 export const QUERIES = {
-  ASSETS: '.search-details-list',
-  ASSETS_PARENT: '.master .body',
-  ASSETS_SELECTED: '.search-details-item.selected',
+  ASSETS_SELECTED: '#main .detail .master .selected',
+  ASSETS_SELECTION_TOOLBAR: '.selection-toolbar',
+  MAIN: '#main',
   PRINT_BUTTON: id(ns('print', 'button')),
   PRINT_ROW: id(ns('print', 'row')),
-  PRINT_ROW_PARENT: '#reports > .table'
+  PRINT_ROW_PARENT: '#tasks > ul'
 };
 
 export const SETTINGS = {

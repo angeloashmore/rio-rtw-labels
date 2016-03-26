@@ -11,7 +11,7 @@ const toObject = (element) => {
     return prev;
   };
 
-  return Object.keys(ATTRIBUTES.CLASSES).reduce(reducer);
+  return Object.keys(ATTRIBUTES.CLASSES).reduce(reducer, {});
 };
 
 const print = () => {
