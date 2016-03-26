@@ -1,7 +1,7 @@
 import Logger from 'js-logger';
 
-const unknown = event => {
-  const { name: type, message: payload } = event;
+const unknown = (event) => {
+  const {name: type, message: payload} = event;
 
   Logger.info('Message received', type, payload);
 

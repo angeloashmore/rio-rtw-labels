@@ -1,32 +1,31 @@
 import Logger from 'js-logger';
-import { ATTRIBUTES, MESSAGES, QUERIES } from 'constants';
-import { dispatchMessage } from 'end/actions';
+import {ATTRIBUTES, MESSAGES, QUERIES} from 'constants';
+import {dispatchMessage} from 'end/actions';
 
-export default function print() {
-  const assets = selectedAssets();
+const toObject = (element) => {
+  const reducer = (prev, curr) => {
+    const klass = ATTRIBUTES.CLASSES[curr];
 
-  if (assets.length < 1) {
+    prev[curr] = element.querySelector('.' + klass).innerText;
+
+    return prev;
+  };
+
+  return Object.keys(ATTRIBUTES.CLASSES).reduce(reducer);
+};
+
+const print = () => {
+  const selected = document.querySelectorAll(QUERIES.ASSETS_SELECTED);
+
+  if (selected.length < 1) {
     Logger.warn('No assets selected to print');
+
     return;
   }
 
-  dispatchMessage(MESSAGES.PRINT, assets);
-}
+  const objects = [...selected].map(toObject);
 
-function selectedAssets() {
-  const elements = document.querySelectorAll(QUERIES.ASSETS_SELECTED);
-  let assets = [...elements];
-  return assets.map(elementToAsset);
-}
+  dispatchMessage(MESSAGES.PRINT, objects);
+};
 
-function elementToAsset(element) {
-  var asset = {};
-
-  for (let key in ATTRIBUTES.CLASSES) {
-    const klass = ATTRIBUTES.CLASSES[key];
-    const value = element.querySelector(`.${klass}`).innerText;
-    asset[key] = value;
-  }
-
-  return asset;
-}
+export default print;

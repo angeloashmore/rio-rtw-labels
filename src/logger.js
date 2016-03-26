@@ -1,6 +1,8 @@
 import Logger from 'js-logger';
-import { NAMESPACE } from 'constants';
+import {NAMESPACE} from 'constants';
 
-Logger.useDefaults({
-  formatter: messages => messages.unshift(`[${NAMESPACE}]`)
-});
+const formatter = (messages) => {
+  return messages.unshift('[' + NAMESPACE + ']');
+};
+
+Logger.useDefaults({formatter});

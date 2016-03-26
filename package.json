@@ -26,6 +26,7 @@
     "clean-webpack-plugin": "^0.1.8",
     "copy-webpack-plugin": "^1.1.1",
     "eslint": "^2.4.0",
+    "eslint-config-canonical": "^1.6.10",
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.12.0",
     "legacy-loader": "angeloashmore/legacy-loader",
@@ -37,5 +38,14 @@
   "dependencies": {
     "hyperscript": "^1.4.7",
     "js-logger": "^1.2.0"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-canonical",
+    "rules": {
+      "indent": [
+        2,
+        2
+      ]
+    }
   }
 }

@@ -1,4 +1,4 @@
-const WebpackConfig = require("webpack-config");
+const WebpackConfig = require('webpack-config');
 
 WebpackConfig.environment.setAll({
   env: function() {
@@ -6,4 +6,4 @@ WebpackConfig.environment.setAll({
   }
 });
 
-module.exports = new WebpackConfig().extend("./webpack.[env].config.js");
+module.exports = new WebpackConfig().extend('./webpack.[env].config.js');

@@ -1,14 +1,15 @@
 import 'logger';
 import Logger from 'js-logger';
 import Safari from 'safari';
-import { MESSAGE, OBSERVATIONS, QUERIES, UNDEFINED } from 'constants';
+import {MESSAGE, OBSERVATIONS, QUERIES} from 'constants';
 import messageHandlerShim from 'messageHandlerShim';
 import * as messageHandlers from 'end/messageHandlers';
-import { observe } from 'end/actions';
+import {observe} from 'end/actions';
 
-function init() {
-  // Begin listening for messages.
+const init = () => {
   const messageHandler = messageHandlerShim(messageHandlers);
+
+  // Begin listening for messages.
   Safari.self.addEventListener(MESSAGE, messageHandler, false);
   Logger.info('Now listening for messages');
 
@@ -17,6 +18,6 @@ function init() {
     childList: true,
     subtree: true
   });
-}
+};
 
 window.onload = init;

@@ -1,16 +1,25 @@
 export const NAMESPACE = 'rio-rtw-labels';
+export const NAMESPACE_SEPARATOR = '__';
+
+const id = (value) => {
+  return '#' + value;
+};
+
+const ns = (...values) => {
+  return [NAMESPACE, ...values].join(NAMESPACE_SEPARATOR);
+};
 
 export const ATTRIBUTES = {
   BUCKET: 'bucket',
   CLASSES: {
-    description: 'description',
-    partNumber: 'part_number',
-    serialNumber: 'serial',
     bucket: 'bucket',
-    location: 'location',
-    group: 'group',
     category: 'category',
-    position: 'position'
+    description: 'description',
+    group: 'group',
+    location: 'location',
+    partNumber: 'part_number',
+    position: 'position',
+    serialNumber: 'serial'
   },
   SERIAL_NUMBER_TEXT: 'serialNumberText'
 };
@@ -43,12 +52,3 @@ export const SETTINGS = {
 };
 
 export const UNDEFINED = 'undefined';
-
-function id(value) {
-  return '#' + value;
-}
-
-function ns(...values) {
-  const separator = '__';
-  return [NAMESPACE, ...values].join(separator);
-}

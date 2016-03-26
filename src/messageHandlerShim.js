@@ -1,12 +1,16 @@
-import { UNDEFINED } from 'constants';
+import {UNDEFINED} from 'constants';
 
-const messageHandlerShim = handlers => event => {
-  const { name } = event;
-  const handler = handlers[name];
+const messageHandlerShim = (handlers) => {
+  return (event) => {
+    const {name} = event;
+    const handler = handlers[name];
 
-  if (typeof handler !== UNDEFINED) return handler(event);
+    if (typeof handler !== UNDEFINED) {
+      return handler(event);
+    }
 
-  return handlers.unknown(event);
+    return handlers.unknown(event);
+  };
 };
 
 export default messageHandlerShim;
