@@ -1,5 +1,4 @@
 export const NAMESPACE = 'rio-rtw-labels';
-export const NAMESPACE_SEPARATOR = '__';
 
 export const ATTRIBUTES = {
   BUCKET: 'bucket',
@@ -25,13 +24,13 @@ export const MESSAGES = {
 };
 
 export const OBSERVATIONS = {
-  ASSETS_SELECTION_TOOLBAR: 'assetsSelectionToolbar',
+  ASSETS_OBSERVABLE: 'assetsObservable',
   MAIN: 'main'
 };
 
 export const QUERIES = {
+  ASSETS_OBSERVABLE: '#main .detail .master',
   ASSETS_SELECTED: '#main .detail .master .selected',
-  ASSETS_SELECTION_TOOLBAR: '.selection-toolbar',
   MAIN: '#main',
   PRINT_BUTTON: '#' + NAMESPACE + '__print__button',
   PRINT_ROW: '#' + NAMESPACE + '__print__row',

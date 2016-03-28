@@ -6,17 +6,19 @@ const main = (observer) => {
   return (mutation) => {
     Logger.info('Mutation received', OBSERVATIONS.MAIN, mutation);
 
-    const node = document.querySelector(QUERIES.ASSETS_SELECTION_TOOLBAR);
+    const node = document.querySelector(QUERIES.ASSETS_OBSERVABLE);
 
     if (node) {
       observer.disconnect();
       Logger.info('No longer observing mutations', OBSERVATIONS.MAIN);
 
-      // Begin observing on QUERIES.ASSETS_SELECTION_TOOLBAR
+      // Begin observing on QUERIES.ASSETS_OBSERVABLE.
       observe(
-        OBSERVATIONS.ASSETS_SELECTION_TOOLBAR,
-        QUERIES.ASSETS_SELECTION_TOOLBAR,
+        OBSERVATIONS.ASSETS_OBSERVABLE,
+        QUERIES.ASSETS_OBSERVABLE,
         {
+          attributeList: ['class'],
+          attributes: true,
           childList: true,
           subtree: true
         });

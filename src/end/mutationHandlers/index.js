@@ -1,7 +1,7 @@
-import assetsSelectionToolbar from 'end/mutationHandlers/assetsSelectionToolbar';
+import assetsObservable from 'end/mutationHandlers/assetsObservable';
 import main from 'end/mutationHandlers/main';
 
 export {
-  assetsSelectionToolbar,
+  assetsObservable,
   main
 };

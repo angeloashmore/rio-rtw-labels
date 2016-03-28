@@ -3,15 +3,13 @@ import {ATTRIBUTES, MESSAGES, QUERIES} from 'constants';
 import {dispatchMessage} from 'end/actions';
 
 const toObject = (element) => {
-  const reducer = (prev, curr) => {
+  return Object.keys(ATTRIBUTES.CLASSES).reduce((prev, curr) => {
     const klass = ATTRIBUTES.CLASSES[curr];
 
     prev[curr] = element.querySelector('.' + klass).innerText;
 
     return prev;
-  };
-
-  return Object.keys(ATTRIBUTES.CLASSES).reduce(reducer, {});
+  }, {});
 };
 
 const print = () => {
