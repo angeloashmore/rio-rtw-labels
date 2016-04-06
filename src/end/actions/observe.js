@@ -3,7 +3,7 @@ import * as mutationHandlers from 'end/mutationHandlers';
 
 const observe = (observation, query, config) => {
   const observer = new MutationObserver((mutations) => {
-    mutations.forEach(mutationHandlers[observation](observer));
+    mutationHandlers[observation](observer);
   });
 
   const target = document.querySelector(query);

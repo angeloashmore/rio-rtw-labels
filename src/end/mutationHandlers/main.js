@@ -3,8 +3,8 @@ import {OBSERVATIONS, QUERIES} from 'constants';
 import {observe} from 'end/actions';
 
 const main = (observer) => {
-  return (mutation) => {
-    Logger.info('Mutation received', OBSERVATIONS.MAIN, mutation);
+  return (mutations) => {
+    Logger.info('Mutations received', OBSERVATIONS.MAIN, mutations);
 
     const node = document.querySelector(QUERIES.ASSETS_OBSERVABLE);
 
