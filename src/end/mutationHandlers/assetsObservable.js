@@ -7,10 +7,10 @@ const assetsObservable = () => {
     Logger.info('Mutations received', OBSERVATIONS.ASSETS_OBSERVABLE, mutations);
 
     const parent = document.querySelector(QUERIES.PRINT_ROW_PARENT);
-    const button = document.querySelector(QUERIES.PRINT_BUTTON);
+    const row = document.querySelector(QUERIES.PRINT_ROW);
 
-    if (parent && button) {
-      parent.removeChild(button);
+    if (parent && row) {
+      parent.removeChild(row);
     }
 
     if (parent) {
