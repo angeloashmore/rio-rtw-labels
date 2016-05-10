@@ -1,7 +1,2 @@
-import error from 'end/messageHandlers/error';
-import unknown from 'end/messageHandlers/unknown';
-
-export {
-  error,
-  unknown
-};
+export error from 'end/messageHandlers/error'
+export unknown from 'end/messageHandlers/unknown'

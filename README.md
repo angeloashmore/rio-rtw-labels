@@ -1,6 +1,6 @@
 # Rio RTW Labels
 
-[![Canonical Code Style](https://img.shields.io/badge/code%20style-canonical-blue.svg?style=flat-square)](https://github.com/gajus/canonical)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
 
 Print RTW labels from Rio to a DYMO printer. A "Print RTW Label" button is added
 to the asset actions.

@@ -1,14 +1,14 @@
-const WebpackConfig = require('webpack-config'),
-      HtmlWebpackPlugin = require('html-webpack-plugin'),
-      CleanWebpackPlugin = require('clean-webpack-plugin'),
-      CopyWebpackPlugin = require('copy-webpack-plugin');
+const WebpackConfig = require('webpack-config')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
-const buildDir = 'rio-rtw-labels.safariextension';
+const buildDir = 'rio-rtw-labels.safariextension'
 
 module.exports = new WebpackConfig().merge({
   entry: {
     end: './src/end/index.js',
-    global: './src/global/index.js',
+    global: './src/global/index.js'
   },
 
   output: {
@@ -53,7 +53,7 @@ module.exports = new WebpackConfig().merge({
     new CleanWebpackPlugin([buildDir]),
     new CopyWebpackPlugin([
       { from: 'src/Info.plist' },
-      { from: 'src/Settings.plist' },
+      { from: 'src/Settings.plist' }
     ]),
     new HtmlWebpackPlugin({
       title: 'Rio RTW Labels',
@@ -61,4 +61,4 @@ module.exports = new WebpackConfig().merge({
       chunks: ['global']
     })
   ]
-});
+})

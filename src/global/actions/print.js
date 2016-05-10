@@ -1,44 +1,41 @@
-import Logger from 'js-logger';
-import dymo from 'lib/dymo';
-import {ATTRIBUTES, BARCODE_VENDOR_PREFIX, MESSAGES} from 'constants';
-import {dispatchMessage, getPrinter} from 'global/actions';
-import labelFile from 'assets/label.label';
-
+import Logger from 'js-logger'
+import dymo from 'lib/dymo'
+import { ATTRIBUTES, BARCODE_VENDOR_PREFIX, MESSAGES } from 'constants'
+import { dispatchMessage, getPrinter } from 'global/actions'
+import labelFile from 'assets/label.label'
 
 const configureRecord = (record, asset) => {
-  let key;
+  let key
 
   for (key in asset) {
     if (ATTRIBUTES.CLASSES.hasOwnProperty(key)) {
-      record.setText(key, asset[key]);
+      record.setText(key, asset[key])
     }
   }
 
   // Special cases.
-  record.setText(ATTRIBUTES.BUCKET, asset.bucket.toUpperCase());
+  record.setText(ATTRIBUTES.BUCKET, asset.bucket.toUpperCase())
   record.setText(ATTRIBUTES.SERIAL_NUMBER_TEXT,
-                 BARCODE_VENDOR_PREFIX + asset.serialNumber);
-};
+    BARCODE_VENDOR_PREFIX + asset.serialNumber)
+}
 
-const print = (assets) => {
-  const labelSet = new dymo.label.framework.LabelSetBuilder();
+export default (assets) => {
+  const labelSet = new dymo.label.framework.LabelSetBuilder()
 
   assets.forEach((asset) => {
-    const record = labelSet.addRecord();
+    const record = labelSet.addRecord()
 
-    configureRecord(record, asset);
-  });
+    configureRecord(record, asset)
+  })
 
   try {
-    const label = dymo.label.framework.openLabelXml(labelFile);
-    const printer = getPrinter();
+    const label = dymo.label.framework.openLabelXml(labelFile)
+    const printer = getPrinter()
 
-    Logger.info('Printing assets', assets);
-    label.print(printer, null, labelSet);
+    Logger.info('Printing assets', assets)
+    label.print(printer, null, labelSet)
   } catch (error) {
-    Logger.error(error.message);
-    dispatchMessage(MESSAGES.ERROR, error.message);
+    Logger.error(error.message)
+    dispatchMessage(MESSAGES.ERROR, error.message)
   }
-};
-
-export default print;
+}

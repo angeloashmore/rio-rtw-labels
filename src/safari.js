@@ -1,3 +1,3 @@
-const Safari = safari; // eslint-disable-line no-undef
+const Safari = safari
 
-export default Safari;
+export default Safari

@@ -1,7 +1,2 @@
-import print from 'global/messageHandlers/print';
-import unknown from 'global/messageHandlers/unknown';
-
-export {
-  print,
-  unknown
-};
+export print from 'global/messageHandlers/print'
+export unknown from 'global/messageHandlers/unknown'

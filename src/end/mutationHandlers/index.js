@@ -1,7 +1,2 @@
-import assetsObservable from 'end/mutationHandlers/assetsObservable';
-import main from 'end/mutationHandlers/main';
-
-export {
-  assetsObservable,
-  main
-};
+export assetsObservable from 'end/mutationHandlers/assetsObservable'
+export main from 'end/mutationHandlers/main'

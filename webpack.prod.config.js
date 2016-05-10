@@ -1,5 +1,5 @@
-const webpack = require('webpack'),
-      WebpackConfig = require('webpack-config');
+const webpack = require('webpack')
+const WebpackConfig = require('webpack-config')
 
 module.exports = new WebpackConfig().extend('./webpack.base.config.js').merge({
   plugins: [
@@ -13,4 +13,4 @@ module.exports = new WebpackConfig().extend('./webpack.base.config.js').merge({
       }
     })
   ]
-});
+})

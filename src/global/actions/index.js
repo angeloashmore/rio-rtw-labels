@@ -1,9 +1,3 @@
-import dispatchMessage from 'global/actions/dispatchMessage';
-import getPrinter from 'global/actions/getPrinter';
-import print from 'global/actions/print';
-
-export {
-  dispatchMessage,
-  getPrinter,
-  print
-};
+export dispatchMessage from 'global/actions/dispatchMessage'
+export getPrinter from 'global/actions/getPrinter'
+export print from 'global/actions/print'
