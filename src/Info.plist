@@ -5,15 +5,15 @@
     <key>Author</key>
     <string>Angelo Ashmore</string>
     <key>Builder Version</key>
-    <string>11601.4.4</string>
+    <string>11601.5.17.1</string>
     <key>CFBundleDisplayName</key>
     <string>Rio RTW Labels</string>
     <key>CFBundleIdentifier</key>
-    <string>com.apple.riortwlabels</string>
+    <string>com.angeloashmore.riortwlabels</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleShortVersionString</key>
-    <string>1.0</string>
+    <string>0.1.0</string>
     <key>CFBundleVersion</key>
     <string>1</string>
     <key>Chrome</key>
@@ -33,10 +33,8 @@
     </dict>
     <key>Description</key>
     <string>Print RTW labels from Rio</string>
-    <key>Website</key>
-    <string>https://github.com/angeloashmore/rio-rtw-labels</string>
     <key>DeveloperIdentifier</key>
-    <string>0000000000</string>
+    <string>SWM5Z73U9N</string>
     <key>ExtensionInfoDictionaryVersion</key>
     <string>1.0</string>
     <key>Permissions</key>
@@ -54,5 +52,9 @@
         <string>Some</string>
       </dict>
     </dict>
+    <key>Update Manifest URL</key>
+    <string>http://github.com/angeloashmore/rio-rtw-labels/raw/master/manifest.plist</string>
+    <key>Website</key>
+    <string>https://github.com/angeloashmore/rio-rtw-labels</string>
   </dict>
 </plist>
