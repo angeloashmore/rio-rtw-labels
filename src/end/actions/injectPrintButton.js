@@ -9,7 +9,7 @@ const button = () => {
   const text = 'Print RTW Label' + (selected.length === 1 ? '' : 's')
 
   const style = {
-    'background-image': 'url(' + iconPrint + ')'
+    'background': `center/100% url(${iconPrint})`
   }
 
   const onclick = (event) => {
@@ -18,13 +18,13 @@ const button = () => {
   }
 
   return (
-  hscript('li.table-row' + QUERIES.PRINT_ROW,
-    hscript('label', text),
-    hscript('button.download' + QUERIES.PRINT_BUTTON,
-      {
-        onclick,
-        style
-      }))
+    hscript('li.table-row' + QUERIES.PRINT_ROW,
+      hscript('label', text),
+      hscript('button.download' + QUERIES.PRINT_BUTTON,
+        {
+          onclick,
+          style
+        }))
   )
 }
 
