@@ -15,7 +15,7 @@ const configureRecord = (record, asset) => {
 
   // Special cases.
   record.setText(ATTRIBUTES.BUCKET, asset.bucket.toUpperCase())
-  record.setText(ATTRIBUTES.SERIAL_NUMBER_TEXT,
+  record.setText(ATTRIBUTES.SERIAL_NUMBER_BARCODE,
     BARCODE_VENDOR_PREFIX + asset.serialNumber)
 }
 

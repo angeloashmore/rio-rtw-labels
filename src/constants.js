@@ -12,7 +12,7 @@ export const ATTRIBUTES = {
     position: 'position',
     serialNumber: 'serial'
   },
-  SERIAL_NUMBER_TEXT: 'serialNumberText'
+  SERIAL_NUMBER_BARCODE: 'serialNumberBarcode'
 }
 
 export const BARCODE_VENDOR_PREFIX = 'S'
