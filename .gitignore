@@ -32,3 +32,4 @@ jspm_packages
 
 # Safari extension build directory
 *.safariextension
+*.safariextz
