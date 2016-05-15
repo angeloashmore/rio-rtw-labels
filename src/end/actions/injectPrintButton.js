@@ -9,7 +9,22 @@ const button = () => {
   const text = 'Print RTW Label' + (selected.length === 1 ? '' : 's')
 
   const style = {
-    'background': `center/100% url(${iconPrint})`
+    '-webkit-appearance': 'none',
+    'background': `transparent center/100% url(${iconPrint}) no-repeat`,
+    'border': '0 none',
+    'cursor': 'pointer',
+    'height': '40px',
+    'margin': 0,
+    'padding': 0,
+    'border-top-left-radius': 0,
+    'border-top-right-radius': 0,
+    'border-bottom-right-radius': 0,
+    'border-bottom-left-radius': 0,
+    'outline': 'none',
+    'position': 'absolute',
+    'right': '5px',
+    'top': '3px',
+    'width': '40px'
   }
 
   const onclick = (event) => {
@@ -20,7 +35,7 @@ const button = () => {
   return (
     hscript('li.table-row' + QUERIES.PRINT_ROW,
       hscript('label', text),
-      hscript('button.download' + QUERIES.PRINT_BUTTON,
+      hscript('button' + QUERIES.PRINT_BUTTON,
         {
           onclick,
           style
