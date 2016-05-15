@@ -1,6 +1,6 @@
 {
   "name": "rio-rtw-labels",
-  "version": "1.0.0",
+  "version": "0.2.1",
   "description": "Print RTW labels from Rio",
   "private": true,
   "scripts": {
